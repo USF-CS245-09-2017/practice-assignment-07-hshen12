@@ -32,9 +32,7 @@ public class Hashtable {
 	public Object get(String key) {
 		int position = Math.abs(key.hashCode()) % arr.length;
 		HashNode head  = arr[position];
-		if(head == null) {
-			return null;
-		}
+		
 		while(head != null) {
 			if(head.key.equals(key)) {
 				return head.value;
@@ -47,9 +45,6 @@ public class Hashtable {
 	public String remove(String key) {
 		int position = Math.abs(key.hashCode()) % arr.length;
 		HashNode head = arr[position];
-		if(head == null) {
-			return null;
-		}
 		
 		if(head.key.equals(key)) {
 			arr[position] = head.next;
